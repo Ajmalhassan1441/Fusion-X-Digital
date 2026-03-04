@@ -3,7 +3,10 @@
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 import Button from '../component/button/Button'
-import { FaAward, FaWordpress, FaPlug, FaPalette, FaClock, FaRocket } from 'react-icons/fa'
+import { 
+  FaAward, FaWordpress, FaPlug, FaClock, 
+  FaInstagram, FaFacebookF, FaGithub, FaLinkedinIn 
+} from 'react-icons/fa'
 
 export default function WordPressPage() {
   return (
@@ -69,6 +72,46 @@ export default function WordPressPage() {
                     <div className="text-xs text-gray-500">{stat.label}</div>
                   </div>
                 ))}
+              </div>
+
+              {/* Social Media Icons with Links */}
+              <div className="flex items-center gap-4 mb-6">
+                <motion.a
+                  href="https://www.instagram.com/bhattimuzamel?utm_source=qr&igsh=bWV5bTJjcHZ4aWJ3"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.1 }}
+                  className="w-10 h-10 bg-blue-600/20 rounded-full flex items-center justify-center text-blue-400 hover:bg-blue-600 hover:text-white transition-all"
+                >
+                  <FaInstagram size={20} />
+                </motion.a>
+                <motion.a
+                  href="https://www.facebook.com/share/1DsaDSz4g1/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.1 }}
+                  className="w-10 h-10 bg-blue-600/20 rounded-full flex items-center justify-center text-blue-400 hover:bg-blue-600 hover:text-white transition-all"
+                >
+                  <FaFacebookF size={20} />
+                </motion.a>
+                <motion.a
+                  href="https://github.com/muhammadmuzamel"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.1 }}
+                  className="w-10 h-10 bg-blue-600/20 rounded-full flex items-center justify-center text-blue-400 hover:bg-blue-600 hover:text-white transition-all"
+                >
+                  <FaGithub size={20} />
+                </motion.a>
+                <motion.a
+                  href="https://www.linkedin.com/in/muhammad-muzamel/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.1 }}
+                  className="w-10 h-10 bg-blue-600/20 rounded-full flex items-center justify-center text-blue-400 hover:bg-blue-600 hover:text-white transition-all"
+                >
+                  <FaLinkedinIn size={20} />
+                </motion.a>
               </div>
 
               <Button variant="primary" size="large" href="/contact" className="w-full md:w-auto">
