@@ -3,7 +3,10 @@
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 import Button from '../component/button/Button'
-import { FaAward, FaCode, FaReact, FaNodeJs, FaDatabase, FaClock, FaRocket } from 'react-icons/fa'
+import { 
+  FaAward, FaCode, FaReact, FaNodeJs, FaDatabase, FaClock, FaRocket,
+  FaLinkedinIn, FaFacebookF, FaGithub, FaInstagram 
+} from 'react-icons/fa'
 
 export default function WebDevelopmentPage() {
   return (
@@ -69,6 +72,46 @@ export default function WebDevelopmentPage() {
                     <div className="text-xs text-gray-500">{stat.label}</div>
                   </div>
                 ))}
+              </div>
+
+              {/* Social Media Icons with Links */}
+              <div className="flex items-center gap-4 mb-6">
+                <motion.a
+                  href="https://www.linkedin.com/in/mr-manzoor-ahmad/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.1 }}
+                  className="w-10 h-10 bg-purple-600/20 rounded-full flex items-center justify-center text-purple-400 hover:bg-purple-600 hover:text-white transition-all"
+                >
+                  <FaLinkedinIn size={20} />
+                </motion.a>
+                <motion.a
+                  href="https://www.facebook.com/share/1AdofXWi1c/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.1 }}
+                  className="w-10 h-10 bg-purple-600/20 rounded-full flex items-center justify-center text-purple-400 hover:bg-purple-600 hover:text-white transition-all"
+                >
+                  <FaFacebookF size={20} />
+                </motion.a>
+                <motion.a
+                  href="https://github.com/ManzoorAhmad1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.1 }}
+                  className="w-10 h-10 bg-purple-600/20 rounded-full flex items-center justify-center text-purple-400 hover:bg-purple-600 hover:text-white transition-all"
+                >
+                  <FaGithub size={20} />
+                </motion.a>
+                <motion.a
+                  href="https://www.instagram.com/bhattimanzoorahmad?utm_source=qr&igsh=NjRsN3V3NGdpOHc1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.1 }}
+                  className="w-10 h-10 bg-purple-600/20 rounded-full flex items-center justify-center text-purple-400 hover:bg-purple-600 hover:text-white transition-all"
+                >
+                  <FaInstagram size={20} />
+                </motion.a>
               </div>
 
               <Button variant="primary" size="large" href="/contact" className="bg-purple-600 hover:bg-purple-700 w-full md:w-auto">
