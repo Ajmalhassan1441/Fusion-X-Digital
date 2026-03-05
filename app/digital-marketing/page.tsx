@@ -23,7 +23,7 @@ export default function DigitalMarketingPage() {
             >
               <div className="relative w-full h-full min-h-[600px] rounded-3xl overflow-hidden border-4 border-green-500/30 shadow-2xl">
                 <Image
-                  src="/haris.jfif"
+                  src="/Haris.jfif"
                   alt="Haris Aziz"
                   fill
                   className="object-cover"
