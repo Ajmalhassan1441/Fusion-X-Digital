@@ -17,7 +17,7 @@ const team = [
     name: 'Haris Aziz',
     role: 'Digital Marketer',
     bio: 'SEO and digital marketing specialist. Helping brands grow their online presence with data-driven strategies.',
-    image: '/Haris.jfif',     // ✅ direct public folder
+    image: '/haris aziz.png',     // ✅ direct public folder
     social: { linkedin: '#', twitter: '#', facebook: '#' }
   },
   {
