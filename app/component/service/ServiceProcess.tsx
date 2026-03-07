@@ -123,7 +123,7 @@ export default function ServiceProcess() {
                   className="relative text-center"
                 >
                   {/* Step number */}
-                  <div className={`absolute -top-4 left-1/2 transform -translate-x-1/2 w-8 h-8 bg-gradient-to-r ${step.color} rounded-full flex items-center justify-center text-white font-bold text-sm z-10`}>
+                  <div className={`absolute -top-4 left-1/2 transform -translate-x-1/2 w-8 h-8 bg-linear-to-r ${step.color} rounded-full flex items-center justify-center text-white font-bold text-sm z-10`}>
                     {index + 1}
                   </div>
                   
@@ -132,7 +132,7 @@ export default function ServiceProcess() {
                     <Icon className="text-4xl text-blue-400 group-hover:scale-110 transition-transform" />
                     
                     {/* Pulse effect */}
-                    <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500/20 to-purple-500/20 animate-ping opacity-75" />
+                    <div className="absolute inset-0 rounded-full bg-linear-to-r from-blue-500/20 to-purple-500/20 animate-ping opacity-75" />
                   </div>
                   
                   <h3 className="text-xl font-bold text-white mb-3">{step.title}</h3>

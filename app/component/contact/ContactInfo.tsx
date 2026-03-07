@@ -182,7 +182,7 @@ export default function ContactInfo() {
                 <div className="absolute left-1/2 transform -translate-x-1/2 z-20">
                   <div className={`
                     w-10 h-10 rounded-full 
-                    bg-gradient-to-r from-blue-600 to-purple-600 
+                    bg-linear-to-r from-blue-600 to-purple-600 
                     flex items-center justify-center text-white font-bold
                     shadow-lg border-2 border-white/20
                     animate-pulse

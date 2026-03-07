@@ -88,7 +88,7 @@ export default function Testimonials() {
               className="group relative"
             >
               {/* Card with gradient border on hover */}
-              <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl opacity-0 group-hover:opacity-40 blur-md transition duration-500" />
+              <div className="absolute -inset-0.5 bg-linear-to-r from-blue-600 to-purple-600 rounded-2xl opacity-0 group-hover:opacity-40 blur-md transition duration-500" />
               
               {/* Main card */}
               <div className="relative bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm p-6 rounded-2xl border border-gray-700 group-hover:border-transparent transition-all duration-300 shadow-xl">
@@ -98,8 +98,8 @@ export default function Testimonials() {
                 {/* Avatar with glow effect */}
                 <div className="absolute -top-6 left-6">
                   <div className="relative">
-                    <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full blur-md opacity-0 group-hover:opacity-30 transition-opacity duration-500" />
-                    <div className="relative w-14 h-14 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 flex items-center justify-center text-white font-bold text-xl border-4 border-gray-900 group-hover:scale-110 transition-transform duration-300">
+                    <div className="absolute inset-0 bg-linear-to-r from-blue-500 to-purple-500 rounded-full blur-md opacity-0 group-hover:opacity-30 transition-opacity duration-500" />
+                    <div className="relative w-14 h-14 rounded-full bg-linear-to-r from-blue-500 to-purple-500 flex items-center justify-center text-white font-bold text-xl border-4 border-gray-900 group-hover:scale-110 transition-transform duration-300">
                       {testimonial.initial}
                     </div>
                   </div>
@@ -140,7 +140,7 @@ export default function Testimonials() {
                 </div>
 
                 {/* Decorative line at bottom */}
-                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 group-hover:w-full transition-all duration-500 opacity-70" />
+                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-linear-to-r from-blue-500 to-purple-500 group-hover:w-full transition-all duration-500 opacity-70" />
               </div>
             </motion.div>
           ))}

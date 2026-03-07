@@ -216,7 +216,7 @@ export default function ContactForm() {
                           size="large"
                           fullWidth
                           disabled={isSubmitting}
-                          className="mt-8 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 border-0"
+                          className="mt-8 bg-linear-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 border-0"
                         >
                           {isSubmitting ? 'Sending...' : 'Send Message'}
                         </Button>

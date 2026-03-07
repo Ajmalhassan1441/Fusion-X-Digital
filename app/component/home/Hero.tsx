@@ -86,7 +86,7 @@ export default function Hero() {
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.3 }}
-                  className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400"
+                  className="block text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-purple-400"
                 >
                   Creativity
                 </motion.span>
@@ -102,7 +102,7 @@ export default function Hero() {
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.5 }}
-                  className="block text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400"
+                  className="block text-transparent bg-clip-text bg-linear-to-r from-purple-400 to-pink-400"
                 >
                   Technology
                 </motion.span>

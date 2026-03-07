@@ -30,7 +30,7 @@ export default function CTA() {
           {/* Main heading */}
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
             Ready to Build Something
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">
+            <span className="block text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-purple-400">
               Extraordinary?
             </span>
           </h2>

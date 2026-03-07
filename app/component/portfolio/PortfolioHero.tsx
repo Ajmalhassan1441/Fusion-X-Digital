@@ -50,7 +50,7 @@ export default function PortfolioHero() {
         {[...Array(12)].map((_, i) => (
           <motion.div
             key={i}
-            className="bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg"
+            className="bg-linear-to-r from-blue-500 to-purple-500 rounded-lg"
             animate={{
               y: [0, -20, 0],
               opacity: [0.1, 0.3, 0.1],

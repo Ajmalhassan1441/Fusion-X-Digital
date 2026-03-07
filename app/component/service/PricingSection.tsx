@@ -73,7 +73,7 @@ export default function PricingSection() {
               } hover:border-blue-500/30 transition-all`}
             >
               {pkg.popular && (
-                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-blue-500 to-purple-500 px-4 py-1 rounded-full text-white text-sm font-medium">
+                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-linear-to-r from-blue-500 to-purple-500 px-4 py-1 rounded-full text-white text-sm font-medium">
                   Most Popular
                 </div>
               )}

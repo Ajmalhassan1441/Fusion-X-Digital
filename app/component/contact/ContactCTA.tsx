@@ -8,7 +8,7 @@ export default function ContactCTA() {
     <section className="py-20 relative overflow-hidden">
       {/* Animated background */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20" />
+        <div className="absolute inset-0 bg-linear-to-r from-blue-600/20 to-purple-600/20" />
         <div className="absolute top-0 left-0 w-full h-full">
           {[...Array(5)].map((_, i) => (
             <motion.div

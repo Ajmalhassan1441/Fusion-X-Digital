@@ -81,7 +81,7 @@ export default function ContactHero() {
                 initial={{ opacity: 0, x: -50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
-                className="bg-gradient-to-r from-blue-400 via-purple-400 to-blue-400 bg-clip-text text-transparent"
+                className="bg-linear-to-r from-blue-400 via-purple-400 to-blue-400 bg-clip-text text-transparent"
               >
                 Connect With
               </motion.span>
@@ -166,7 +166,7 @@ export default function ContactHero() {
             initial={{ scaleX: 0 }}
             animate={{ scaleX: 1 }}
             transition={{ duration: 1, delay: 0.8 }}
-            className="w-24 h-px bg-gradient-to-r from-transparent via-blue-400 to-transparent mx-auto mt-12"
+            className="w-24 h-px bg-linear-to-r from-transparent via-blue-400 to-transparent mx-auto mt-12"
           />
         </div>
       </div>

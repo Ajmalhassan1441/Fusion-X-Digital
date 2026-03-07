@@ -125,7 +125,7 @@ export default function Header() {
           shadow-[0_8px_32px_0_rgba(31,38,135,0.37)]
           transition-all duration-500
           before:absolute before:inset-0 before:-z-10 
-          before:rounded-2xl before:bg-gradient-to-r 
+          before:rounded-2xl before:bg-linear-to-r 
           before:from-blue-500/20 before:via-purple-500/20 before:to-blue-500/20
           before:blur-xl before:opacity-0 
           before:transition-opacity before:duration-500
@@ -191,7 +191,7 @@ export default function Header() {
                       
                       {/* Background effect on hover/active */}
                       <span className={`
-                        absolute inset-0 rounded-xl bg-gradient-to-r 
+                        absolute inset-0 rounded-xl bg-linear-to-r 
                         from-blue-500/10 to-purple-500/10 
                         transition-opacity duration-300
                         ${isActive ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}
@@ -222,7 +222,7 @@ export default function Header() {
               className="md:hidden relative w-10 h-10 rounded-lg bg-white/5 hover:bg-white/10 transition-colors duration-300 group"
               aria-label="Toggle menu"
             >
-              <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-blue-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute inset-0 rounded-lg bg-linear-to-r from-blue-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               <div className="relative flex flex-col items-center justify-center gap-1.5">
                 <span className={`block w-5 h-0.5 bg-white transform transition-all duration-300 ${isOpen ? 'rotate-45 translate-y-1' : ''}`} />
                 <span className={`block w-5 h-0.5 bg-white transition-all duration-300 ${isOpen ? 'opacity-0' : ''}`} />
@@ -251,7 +251,7 @@ export default function Header() {
                       transform transition-all duration-300
                       hover:translate-x-2
                       ${isActive 
-                        ? 'bg-gradient-to-r from-blue-500/20 to-purple-500/20 text-blue-400' 
+                        ? 'bg-linear-to-r from-blue-500/20 to-purple-500/20 text-blue-400' 
                         : 'text-gray-300 hover:text-white hover:bg-white/5'
                       }
                     `}

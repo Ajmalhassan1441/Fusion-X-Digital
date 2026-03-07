@@ -70,7 +70,7 @@ export default function CompanyStory() {
               From <span className="text-blue-400">Vision</span> to{' '}
               <span className="text-blue-400">Reality</span>
             </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto" />
+            <div className="w-24 h-1 bg-linear-to-r from-blue-500 to-purple-500 mx-auto" />
           </motion.div>
 
           {/* Main Content - Glass Card */}
@@ -153,7 +153,7 @@ export default function CompanyStory() {
             transition={{ duration: 0.6, delay: 0.6 }}
             className="mt-12 relative"
           >
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-3xl blur-2xl" />
+            <div className="absolute inset-0 bg-linear-to-r from-blue-500/20 to-purple-500/20 rounded-3xl blur-2xl" />
             <div className="relative bg-gray-800/50 backdrop-blur-sm p-8 rounded-2xl border border-white/10">
               <FaQuoteLeft className="text-blue-400/30 text-6xl mb-4" />
               <p className="text-xl md:text-2xl text-gray-200 italic leading-relaxed">

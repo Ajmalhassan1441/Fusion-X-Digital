@@ -16,7 +16,7 @@ export default function CaseStudy() {
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="bg-gradient-to-r from-blue-900/20 to-purple-900/20 rounded-3xl border border-gray-700 overflow-hidden"
+          className="bg-linear-to-r from-blue-900/20 to-purple-900/20 rounded-3xl border border-gray-700 overflow-hidden"
         >
           <div className="grid lg:grid-cols-2 gap-8 items-center">
             {/* Left side - Content */}
@@ -70,7 +70,7 @@ export default function CaseStudy() {
               />
               
               {/* Overlay gradient */}
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent to-black/50 lg:bg-gradient-to-l" />
+              <div className="absolute inset-0 bg-linear-to-r from-transparent to-black/50 lg:bg-gradient-to-l" />
             </div>
           </div>
         </motion.div>

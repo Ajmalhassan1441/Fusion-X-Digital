@@ -133,7 +133,7 @@ export default function GraphicDesignPage() {
                         initial={{ width: 0 }}
                         whileInView={{ width: `${item.level}%` }}
                         transition={{ duration: 1, delay: 0.3 + i * 0.1 }}
-                        className="h-full bg-gradient-to-r from-blue-500 to-purple-500"
+                        className="h-full bg-linear-to-r from-blue-500 to-purple-500"
                       />
                     </div>
                   </div>
