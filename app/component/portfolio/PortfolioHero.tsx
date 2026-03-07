@@ -171,7 +171,7 @@ export default function PortfolioHero() {
           </div>
 
           {/* Right side - Empty (images in background) */}
-          <div className="lg:w-1/2 relative h-[400px]" />
+          <div className="lg:w-1/2 relative h-96" />
         </div>
       </div>
     </section>

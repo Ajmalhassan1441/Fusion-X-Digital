@@ -12,7 +12,7 @@ export default function Map() {
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="relative h-[400px] rounded-2xl overflow-hidden border border-gray-700"
+          className="relative h-96 rounded-2xl overflow-hidden border border-gray-700"
         >
           {/* ✅ Updated Google Maps Embed for Bangla Gogera, Okara */}
           <iframe

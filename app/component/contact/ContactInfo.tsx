@@ -48,42 +48,39 @@ export default function ContactInfo() {
 
   // Check if open or closed
   useEffect(() => {
-    const day = currentTime.getDay() // 0 = Sunday, 1 = Monday, ..., 6 = Saturday
+    const day = currentTime.getDay()
     const hours = currentTime.getHours()
     const minutes = currentTime.getMinutes()
     const currentMinutes = hours * 60 + minutes
 
-    // Define working hours
     const workingHours = {
-      monday: { open: 9 * 60, close: 18 * 60 }, // 9am to 6pm
+      monday: { open: 9 * 60, close: 18 * 60 },
       tuesday: { open: 9 * 60, close: 18 * 60 },
       wednesday: { open: 9 * 60, close: 18 * 60 },
       thursday: { open: 9 * 60, close: 18 * 60 },
       friday: { open: 9 * 60, close: 18 * 60 },
-      saturday: { open: 10 * 60, close: 16 * 60 }, // 10am to 4pm
-      sunday: { open: null, close: null } // Closed
+      saturday: { open: 10 * 60, close: 16 * 60 },
+      sunday: { open: null, close: null }
     }
 
-    let isOpen = false
     let statusText = ''
 
     switch(day) {
-      case 0: // Sunday
-        isOpen = false
+      case 0:
         statusText = 'Closed Today'
         break
-      case 6: // Saturday
+      case 6:
         if (workingHours.saturday.open && workingHours.saturday.close) {
-          isOpen = currentMinutes >= workingHours.saturday.open && 
-                   currentMinutes < workingHours.saturday.close
+          const isOpen = currentMinutes >= workingHours.saturday.open && 
+                         currentMinutes < workingHours.saturday.close
           statusText = isOpen ? 'Open Now' : 'Closed Now'
         }
         break
-      default: // Monday to Friday
+      default:
         const weekday = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday'][day - 1]
         const hours = workingHours[weekday as keyof typeof workingHours]
         if (hours.open && hours.close) {
-          isOpen = currentMinutes >= hours.open && currentMinutes < hours.close
+          const isOpen = currentMinutes >= hours.open && currentMinutes < hours.close
           statusText = isOpen ? 'Open Now' : 'Closed Now'
         }
     }
@@ -91,7 +88,6 @@ export default function ContactInfo() {
     setStatus(statusText)
   }, [currentTime])
 
-  // Format current time
   const formatTime = (date: Date) => {
     return date.toLocaleTimeString('en-US', { 
       hour: '2-digit', 
@@ -100,25 +96,22 @@ export default function ContactInfo() {
     })
   }
 
-  // Get current day name
   const getDayName = (date: Date) => {
     return date.toLocaleDateString('en-US', { weekday: 'long' })
   }
 
-  // Dynamic working hours details
   const workingDetails = [
     `Monday - Friday: 9am - 6pm`,
     `Saturday: 10am - 4pm`,
     `Sunday: Closed`,
   ]
 
-  // Update the last card's details
   contactDetails[3].details = workingDetails
 
   return (
     <section ref={ref} className="py-20 relative overflow-hidden">
-      {/* DNA Monogram Line - Elegant Double Helix */}
-      <div className="absolute left-1/2 top-0 bottom-0 transform -translate-x-1/2 z-0">
+      {/* DNA Monogram Line - Hide on mobile */}
+      <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 transform -translate-x-1/2 z-0">
         <svg className="absolute inset-0 w-12 -ml-6 h-full" preserveAspectRatio="none">
           <defs>
             <linearGradient id="helixGradient" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -128,7 +121,6 @@ export default function ContactInfo() {
             </linearGradient>
           </defs>
           
-          {/* Left strand */}
           <motion.path
             d="M 6 0 Q 12 50, 6 100 Q 0 150, 6 200 Q 12 250, 6 300 Q 0 350, 6 400 Q 12 450, 6 500 Q 0 550, 6 600"
             stroke="url(#helixGradient)"
@@ -139,7 +131,6 @@ export default function ContactInfo() {
             transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
           />
           
-          {/* Right strand */}
           <motion.path
             d="M 18 0 Q 12 50, 18 100 Q 24 150, 18 200 Q 12 250, 18 300 Q 24 350, 18 400 Q 12 450, 18 500 Q 24 550, 18 600"
             stroke="url(#helixGradient)"
@@ -150,7 +141,6 @@ export default function ContactInfo() {
             transition={{ duration: 3, repeat: Infinity, ease: "linear", delay: 0.5 }}
           />
           
-          {/* Connecting rungs - like DNA steps */}
           {[...Array(12)].map((_, i) => (
             <motion.line
               key={i}
@@ -173,59 +163,44 @@ export default function ContactInfo() {
         <div className="relative max-w-4xl mx-auto">
           {contactDetails.map((item, index) => {
             const Icon = item.icon
-            const isRightSide = index % 2 === 0 // 0,2 right; 1,3 left
-            const isWorkingHours = index === 3 // Last card is working hours
+            const isWorkingHours = index === 3
 
             return (
-              <div key={index} className="relative flex items-center min-h-[280px]">
-                {/* Number Circle on the line */}
-                <div className="absolute left-1/2 transform -translate-x-1/2 z-20">
-                  <div className={`
-                    w-10 h-10 rounded-full 
-                    bg-linear-to-r from-blue-600 to-purple-600 
-                    flex items-center justify-center text-white font-bold
-                    shadow-lg border-2 border-white/20
-                    animate-pulse
-                  `}>
+              <div key={index} className="relative mb-12 lg:mb-0 lg:min-h-70">
+                {/* Number Circle - Hide on mobile, show on desktop */}
+                <div className="hidden lg:block absolute left-1/2 transform -translate-x-1/2 z-20">
+                  <div className="w-10 h-10 rounded-full bg-linear-to-r from-blue-600 to-purple-600 flex items-center justify-center text-white font-bold shadow-lg border-2 border-white/20 animate-pulse">
                     {index + 1}
                   </div>
                 </div>
 
-                {/* Card with pointed tip */}
+                {/* Cards - Stack vertically on mobile */}
                 <motion.div
-                  initial={{ 
-                    opacity: 0, 
-                    x: isRightSide ? 100 : -100,
-                    y: 20 
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={inView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.6, delay: index * 0.15 }}
+                  className="w-full lg:w-[calc(50%-3.75rem)] lg:absolute lg:top-0 lg:left-1/2 lg:ml-12"
+                  style={{
+                    ...(index % 2 === 0 ? { 
+                      left: '50%', 
+                      marginLeft: '3rem' 
+                    } : { 
+                      right: '50%', 
+                      marginRight: '3rem' 
+                    })
                   }}
-                  animate={inView ? { 
-                    opacity: 1, 
-                    x: 0, 
-                    y: 0 
-                  } : {}}
-                  transition={{ 
-                    duration: 0.6, 
-                    delay: index * 0.15,
-                    type: "spring",
-                    stiffness: 50
-                  }}
-                  className={`
-                    w-[calc(50%-60px)] absolute
-                    ${isRightSide ? 'left-1/2 ml-12' : 'right-1/2 mr-12'}
-                  `}
                 >
                   <div className="group relative">
-                    <div className={`absolute inset-0 bg-gradient-to-br ${item.color} rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl`} />
+                    <div className={`absolute inset-0 bg-linear-to-br ${item.color} rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl`} />
                     
-                    {/* Card with point */}
                     <div className="relative">
-                      {/* Point / Nok */}
+                      {/* Point / Nok - Hide on mobile */}
                       <div className={`
-                        absolute top-1/2 -translate-y-1/2 
-                        ${isRightSide ? '-left-3' : '-right-3'}
+                        hidden lg:block absolute top-1/2 -translate-y-1/2 
+                        ${index % 2 === 0 ? '-left-3' : '-right-3'}
                         w-0 h-0 
                         border-y-8 border-y-transparent
-                        ${isRightSide 
+                        ${index % 2 === 0 
                           ? 'border-r-8 border-r-gray-800 group-hover:border-r-gray-700' 
                           : 'border-l-8 border-l-gray-800 group-hover:border-l-gray-700'
                         }
@@ -233,13 +208,8 @@ export default function ContactInfo() {
                       `} />
                       
                       {/* Main card */}
-                      <div className={`
-                        relative bg-gray-800 backdrop-blur-sm p-6 
-                        border border-gray-700 group-hover:border-blue-500/30 
-                        transition-all duration-300
-                        rounded-2xl
-                      `}>
-                        <div className={`flex items-center gap-4 mb-4 ${isRightSide ? '' : 'flex-row-reverse'}`}>
+                      <div className="relative bg-gray-800/90 backdrop-blur-sm p-6 border border-gray-700 group-hover:border-blue-500/30 transition-all duration-300 rounded-2xl">
+                        <div className="flex items-center gap-4 mb-4">
                           <div className="text-4xl text-blue-400 group-hover:scale-110 group-hover:text-white transition-all duration-300">
                             <Icon />
                           </div>
@@ -248,22 +218,22 @@ export default function ContactInfo() {
                           </h3>
                         </div>
                         
-                        {/* Regular details */}
                         {item.details.map((line, i) => (
-                          <p key={i} className="text-gray-400 text-sm mb-1">
+                          <p key={i} className="text-gray-400 text-sm mb-1 wrap-break-word">
                             {line}
                           </p>
                         ))}
 
-                        {/* Clock for working hours */}
                         {isWorkingHours && (
                           <>
-                            <AnalogClock />
-                            <div className="text-center mt-2">
-                              <p className="text-blue-400 text-sm font-medium">
+                            <div className="mt-4">
+                              <AnalogClock />
+                            </div>
+                            <div className="text-center mt-4">
+                              <p className="text-blue-400 text-sm font-medium wrap-break-word">
                                 {getDayName(currentTime)} {formatTime(currentTime)}
                               </p>
-                              <p className={`text-sm font-semibold mt-1 ${
+                              <p className={`text-sm font-semibold mt-1 wrap-break-word ${
                                 status === 'Open Now' 
                                   ? 'text-green-400 animate-pulse' 
                                   : status === 'Closed Today'

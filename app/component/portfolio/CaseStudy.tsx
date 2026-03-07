@@ -61,7 +61,7 @@ export default function CaseStudy() {
             </div>
             
             {/* Right side - Image */}
-            <div className="relative h-80 lg:h-full min-h-[400px]">
+            <div className="relative h-80 lg:h-full min-h-96">
               <Image
                 src="/fasionbrand.avif"
                 alt="Case Study"
